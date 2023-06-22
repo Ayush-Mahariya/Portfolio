@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div id="about" class="row about-section">
+        <div class="col-lg-4 about-card">
+            <h3 class="font-weight-light">Who am I ?</h3>
+            <span class="line mb-5"></span>
+            <h5 class="mb-3">A Web Designer / Developer Located In Our Lovely Earth</h5>
+            <p class="mt-20">I am a full stack web developer with a passion for creating dynamic and user-friendly websites and applications. I have experience in working with various technologies and frameworks, such as HTML, CSS, JavaScript, React, Node.js, MongoDB, etc. I enjoy learning new skills and exploring new challenges in the web development field.</p>
+            <a href="assets/downloadFiles/Ayush_Resume.pdf" download class="btn btn-outline-danger"><i class="icon-down-circled2 "></i>Download My CV</a>
+        </div>
+        <div class="col-lg-4 about-card">
+            <h3 class="font-weight-light">Personal Info</h3>
+            <span class="line mb-5"></span>
+            <ul class="mt40 info list-unstyled">
+                <li><span>Birthdate</span> : 15/01/2003</li>
+                <li><span>Email</span> : ayushmahariya123@gmail.com</li>
+                <li><span>Phone</span> : + (91) 9057341606</li>
+                <li><span>Github</span> : Ayush-Mahariya</li>
+                <li><span>Address</span> :  Jaipur Rajasthan INDIA</li>
+            </ul>
+            <%-include("social-icons", {classType: "social-link"}); %>
+        </div>
+        <div class="col-lg-4 about-card">
+            <h3 class="font-weight-light">My Expertise</h3>
+            <span class="line mb-5"></span>
+            <% expertiseList.forEach((indiExpertise) => { %>
+                <%-include("expertise", {classType: indiExpertise.classType, headingTxt: indiExpertise.headingTxt, paraTxt: indiExpertise.paraTxt}); %>
+            <% }); %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<%- include("htmlHeader"); %>
+
+<%- include("headerSection"); %>
+<%- include("navbarSection"); %>
+<%- include("aboutSection", {expertiseList: expertiseList}); %>
+<%- include("resumeSection", {projectList: projectList, skillList: skillList}); %>
+<%- include("statisticsSection", {statisticsData: statisticsData}); %>
+<%- include("projectsSection", {projectList: projectList}); %>
+<%- include("hireSection"); %>
+<%- include("blogSection", {blogList: blogList}); %>
+<%- include("contactSection"); %>
+
+<%- include("htmlFooter"); %>

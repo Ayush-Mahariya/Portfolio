@@ -1,0 +1,51 @@
+<!--Resume Section-->
+<section class="section" id="resume">
+    <div class="container">
+        <h2 class="mb-5"><span class="text-danger">My</span> Resume</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <%-include("resumeHeader", {headingTxt: "Projects"})%>
+                    <div class="card-body">
+                        <% projectList.forEach((project) => { %>
+                            <h6 class="title text-danger"><a href="<%=project.siteLink%>"><%=project.headingTxt%></a></h6>
+                            <P class="subtitle"><%=project.paraTxtShort%></P>
+                            <hr>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <%-include("resumeHeader", {headingTxt: "Education"})%>
+                    <div class="card-body">
+                        <h6 class="title text-danger">2020 - Present</h6>
+                        <P>Indian Institute of Technology Kharagpur</P>
+                        <P class="subtitle">Dual Degree Aerospace Engineering</P>
+                        <hr>
+                        <h6 class="title text-danger">2018 - 2020</h6>
+                        <P>Navjeevan Academy Sr.Sec. School</P>
+                        <P class="subtitle">Senior Secondary Exam</P>
+                        <hr>
+                        <h6 class="title text-danger">2017 - 2018</h6>
+                        <P>Swami Keshwanand Convent School</P>
+                        <P class="subtitle">Secondary Exam</P>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <%-include("resumeHeader", {headingTxt: "Skills"})%>
+                    <div class="card-body pb-2">
+                        <% skillList.forEach((skill) => { %>
+                            <h6><%=skill.headingTxt%></h6>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-danger" role="progressbar" <% /* eslint-disable css-propertyvalueexpected */ %> style="width: <%=skill.styleTxt%>" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        <%}) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

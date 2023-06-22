@@ -1,0 +1,43 @@
+<div class="blog-card">
+    <div class="img-holder">
+        <img src="<%=imgLink%>" alt="">
+    </div>
+    <div class="content-holder">
+        <h6 class="title"><%=headingTxt%></h6>
+
+        <p class="post-details">
+            <a href="/">By: Admin</a>
+            <a class="post-request" href="/likeBlog?id=<%=id%>"><i class="ti-heart text-danger"></i><%=likeNumber%></a>
+        </p>
+        
+        <p><%=paraTxt%></p>
+    </div>
+</div>
+
+<script>
+    var links = document.querySelectorAll('.post-request');
+    for(var l = 0; l < links.length; l++) {
+      links[l].addEventListener('click', function(e) {
+        e.preventDefault();
+        var url = this.href.split('?');
+        var params = (url.length > 1) ? url[1].split('&') : []
+     
+        var form = document.createElement('form');
+        
+        form.setAttribute('method','post');
+        form.setAttribute('action', url[0]);
+        
+        for(var i = 0; i < params.length;i++) {
+          var inp = document.createElement('input');
+          inp.setAttribute('type', 'text');
+          var value = params[i].split('=');
+          inp.setAttribute('name',value[0]);
+          inp.setAttribute('value', value[1]);
+     
+          form.appendChild(inp);
+        }
+        document.getElementsByTagName('body')[0].appendChild(form);
+        form.submit();
+      });
+    }
+    </script>

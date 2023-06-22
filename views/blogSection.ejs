@@ -1,0 +1,17 @@
+<section class="section" id="blog">
+    <div class="container">
+        <h2 class="mb-5">Latest <span class="text-danger">Blogs</span></h2>
+        <div class="row">
+            <% blogList.forEach((blog) => { %>
+            <%-include("blogCard.ejs", {
+                id: blog._id,
+                imgLink: blog.imgLink,
+                headingTxt: blog.headingTxt,
+                likeNumber: blog.likeNumber,
+                commentNumber: blog.commentNumber,
+                paraTxt: blog.paraTxt
+            });%>
+            <% }); %>
+        </div>
+    </div>
+</section>

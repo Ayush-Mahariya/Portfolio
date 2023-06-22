@@ -1,0 +1,17 @@
+<section class="section" id="service">
+    <div class="container">
+        <h2 class="mb-5 pb-4"><span class="text-danger">My</span> Projects</h2>
+        <div class="row">
+            <% projectList.forEach((indiProject) => { %>
+            <%-include("project", {
+                classType: indiProject.classType,
+                headingTxt: indiProject.headingTxt, 
+                siteLink: indiProject.siteLink, 
+                gitLink: indiProject.gitLink, 
+                skillList: indiProject.skillList, 
+                paraTxt: indiProject.paraTxt
+            })%>
+            <%});%>
+        </div>
+    </div>
+</section>
